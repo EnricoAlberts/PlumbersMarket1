@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plumbers Market — Roodepoort's Trusted Plumbing Experts Since 1980</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0a1628;
+    --navy2: #122040;
+    --blue: #1a4fd6;
+    --blue-light: #2563eb;
+    --orange: #e8500a;
+    --orange-light: #f97316;
+    --cream: #faf8f4;
+    --text: #0f1b2d;
+    --muted: #5c6f85;
+    --border: rgba(15,27,45,0.1);
+    --white: #ffffff;
+    --green: #16a34a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--cream); overflow-x: hidden; }
+  h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--navy2); border-radius: 3px; }
+
+  /* EMERGENCY BAR */
+  .emergency-bar {
+    background: var(--orange);
+    color: #fff;
+    text-align: center;
+    padding: 9px 1rem;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 100;
+  }
+  .emergency-bar a { color: #fff; text-decoration: none; font-weight: 700; }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--orange);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-mark svg { width: 20px; height: 20px; }
+  .logo-text { color: #fff; font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; line-height: 1.1; }
+  .logo-text span { display: block; font-size: 10px; font-weight: 400; color: #7a9abf; letter-spacing: 1.5px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: #9ab4cc; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .nav-phone { color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .nav-phone::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+  .btn-book {
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+  }
+  .btn-book:hover { background: #c9420a; }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 5rem 3rem;
+    gap: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,79,214,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,80,10,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,80,10,0.15);
+    border: 1px solid rgba(232,80,10,0.3);
+    color: #f97316;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .hero h1 {
+    font-size: clamp(32px, 4.5vw, 54px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 em { color: var(--orange-light); font-style: normal; }
+  .hero-desc {
+    color: #8fb3d0;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 2rem;
+  }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-primary {
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #c9420a; transform: translateY(-1px); }
+  .btn-ghost {
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+  .hero-stats {
+    display: flex; gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; color: #fff; }
+  .stat-lbl { font-size: 12px; color: #6a90b0; margin-top: 2px; }
+
+  /* HERO CARD */
+  .hero-card-wrap { position: relative; z-index: 2; }
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+  }
+  .hero-card h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+  .quick-contact-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.2s;
+  }
+  .quick-contact-item:last-child { border-bottom: none; }
+  .quick-contact-item:hover { opacity: 0.8; }
+  .qci-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 18px;
+  }
+  .qci-label { font-size: 11px; color: #7a9abf; text-transform: uppercase; letter-spacing: 0.8px; }
+  .qci-value { font-size: 14px; font-weight: 500; color: #fff; margin-top: 1px; }
+  .availability-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(22,163,74,0.12);
+    border: 1px solid rgba(22,163,74,0.25);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 1.25rem;
+  }
+  .avail-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .avail-text { font-size: 13px; color: #86efac; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 13px; color: var(--muted); font-weight: 400; }
+  .trust-icon { font-size: 16px; }
+  .trust-sep { width: 1px; height: 18px; background: var(--border); flex-shrink: 0; }
+
+  /* SECTIONS */
+  section { padding: 5rem 3rem; }
+  .sec-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+  .sec-title { font-family: 'Syne', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--text); margin-bottom: 0.5rem; }
+  .sec-sub { font-size: 15px; color: var(--muted); max-width: 520px; line-height: 1.6; }
+  .sec-head { margin-bottom: 3rem; }
+  .sec-head.center { text-align: center; }
+  .sec-head.center .sec-sub { margin: 0 auto; }
+
+  /* SERVICES */
+  .services-section { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .service-card {
+    background: var(--white);
+    padding: 1.75rem;
+    cursor: default;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .service-card:hover { background: var(--cream); }
+  .svc-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: #fff3ed;
+    border: 1px solid #fed7aa;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .service-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .svc-arrow { position: absolute; top: 1.75rem; right: 1.75rem; color: #d0d8e4; font-size: 18px; }
+
+  /* SUPPLIES */
+  .supplies-section { background: var(--cream); }
+  .supplies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 2rem; }
+  .supply-pill {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 500; color: var(--text);
+  }
+  .supply-pill span { font-size: 18px; }
+
+  /* BOOKING */
+  .booking-section { background: var(--navy); padding: 5rem 3rem; }
+  .booking-section .sec-label { color: #f97316; }
+  .booking-section .sec-title { color: #fff; }
+  .booking-section .sec-sub { color: #7a9abf; }
+  .booking-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: start; }
+  .booking-info { }
+  .info-block {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .info-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .info-row:last-child { border-bottom: none; }
+  .info-icon { font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+  .info-label { font-size: 11px; color: #6a90b0; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 2px; }
+  .info-val { font-size: 14px; color: #fff; font-weight: 500; }
+
+  /* FORM */
+  .booking-form {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+  .booking-form h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 1.5rem; color: var(--text); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .form-row.full { grid-template-columns: 1fr; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-group label { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.3px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #fff;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--blue-light); }
+  .form-group textarea { min-height: 90px; resize: vertical; }
+  .urgency-label { font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 8px; }
+  .urgency-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .urgency-btn {
+    border: 1.5px solid #e2e8f0;
+    background: #fff;
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .urgency-btn:hover { border-color: #cbd5e1; color: var(--text); }
+  .urgency-btn.sel-emergency { border-color: #dc2626; background: #fef2f2; color: #dc2626; }
+  .urgency-btn.sel-today { border-color: var(--orange); background: #fff7ed; color: var(--orange); }
+  .urgency-btn.sel-flex { border-color: var(--blue-light); background: #eff6ff; color: var(--blue-light); }
+  .submit-btn {
+    width: 100%;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 4px;
+  }
+  .submit-btn:hover { background: #c9420a; transform: translateY(-1px); }
+  .form-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px; }
+  .success-box {
+    display: none;
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    margin-top: 12px;
+  }
+  .success-box p { font-size: 14px; color: #15803d; font-weight: 500; }
+  .success-box small { font-size: 12px; color: #16a34a; }
+
+  /* PROCESS */
+  .process-section { background: var(--cream); }
+  .steps-wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+  .steps-wrap::before {
+    content: '';
+    position: absolute;
+    top: 22px; left: calc(12.5% + 20px); right: calc(12.5% + 20px);
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--orange) 0, var(--orange) 12px, transparent 12px, transparent 20px);
+    z-index: 0;
+  }
+  .step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+  .step-circle {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--cream);
+  }
+  .step h4 { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .step p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* REVIEWS */
+  .reviews-section { background: var(--white); }
+  .rating-hero { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; padding: 2rem; background: var(--navy); border-radius: 16px; }
+  .big-rating { font-family: 'Syne', sans-serif; font-size: 72px; font-weight: 800; color: #fff; line-height: 1; }
+  .rating-stars { font-size: 24px; color: #f59e0b; letter-spacing: 3px; margin-bottom: 4px; }
+  .rating-count { font-size: 14px; color: #7a9abf; }
+  .rating-bars { flex: 1; }
+  .bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+  .bar-label { font-size: 12px; color: #6a90b0; width: 10px; text-align: right; }
+  .bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; background: #f59e0b; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .review-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .rc-stars { color: #f59e0b; font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; }
+  .rc-text { font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 1rem; font-style: italic; }
+  .rc-author { display: flex; align-items: center; gap: 10px; }
+  .rc-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: #fff;
+    flex-shrink: 0;
+  }
+  .rc-name { font-size: 13px; font-weight: 500; }
+  .rc-area { font-size: 11px; color: var(--muted); }
+
+  /* MAP / CONTACT */
+  .contact-section { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .contact-card h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 1.25rem; }
+  .contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 1.1rem; }
+  .ci-icon { font-size: 20px; margin-top: 1px; flex-shrink: 0; }
+  .ci-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 2px; }
+  .ci-val { font-size: 15px; font-weight: 500; }
+  .ci-val a { color: var(--text); text-decoration: none; }
+  .ci-val a:hover { color: var(--orange); }
+  .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hours-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding: 8px 12px; border-radius: 8px; }
+  .hours-row.open { background: #f0fdf4; color: #15803d; }
+  .hours-row.closed { background: #fef2f2; color: #b91c1c; }
+  .hours-row.today { background: #eff6ff; font-weight: 500; }
+  .map-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    height: 200px;
+    background: #e2e8f0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: var(--muted);
+    margin-top: 1rem;
+    position: relative;
+    cursor: pointer;
+  }
+  .map-embed iframe {
+    width: 100%; height: 100%;
+    border: none;
+    pointer-events: auto;
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: var(--orange);
+    padding: 3.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .cta-banner h2 { font-family: 'Syne', sans-serif; font-size: clamp(22px, 3vw, 32px); font-weight: 800; color: #fff; max-width: 500px; line-height: 1.2; }
+  .cta-banner p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 6px; }
+  .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-white { background: #fff; color: var(--orange); border: none; padding: 14px 24px; border-radius: 10px; font-size: 15px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; transition: transform 0.15s; text-decoration: none; }
+  .btn-white:hover { transform: translateY(-1px); }
+  .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); padding: 14px 24px; border-radius: 10px; font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; transition: border-color 0.2s; text-decoration: none; }
+  .btn-outline-white:hover { border-color: #fff; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: #7a9abf;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 13px;
+  }
+  .footer-logo { color: #fff; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { color: #7a9abf; text-decoration: none; font-size: 13px; }
+  .footer-links a:hover { color: #fff; }
+
+  /* WHATSAPP FAB */
+  .wa-fab {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 56px; height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 200;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+  .wa-fab:hover { transform: scale(1.1); box-shadow: 0 6px 26px rgba(37,211,102,0.5); }
+  .wa-tooltip {
+    position: absolute;
+    right: 64px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .wa-fab:hover .wa-tooltip { opacity: 1; }
+
+  /* HAMBURGER */
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * { animation: fadeInUp 0.6s ease both; }
+  .hero-content > *:nth-child(1) { animation-delay: 0.05s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.15s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.25s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.35s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.45s; }
+  .hero-card-wrap { animation: fadeInUp 0.7s 0.3s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links, .nav-right { display: none; }
+    .hamburger { display: block; }
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; min-height: auto; }
+    .hero-card-wrap { display: none; }
+    .hero-stats { gap: 1.5rem; }
+    section, .booking-section, .cta-banner { padding: 3rem 1.5rem; }
+    .booking-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .steps-wrap { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .steps-wrap::before { display: none; }
+    .trust-bar { padding: 1rem 1.5rem; }
+    footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    .cta-banner { justify-content: flex-start; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 28px; }
+    .form-row { grid-template-columns: 1fr; }
+    .steps-wrap { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 1rem; }
+    .hours-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- EMERGENCY BAR -->
+<div class="emergency-bar">
+  🚨 Plumbing Emergency? Call us 24/7 — <a href="tel:+27117680389">011 768 0389</a> &nbsp;|&nbsp; Serving West Rand &amp; Greater Johannesburg
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2a4 4 0 0 1 0 8H2"/><path d="M10 22a4 4 0 0 1 0-8h12"/>
+      </svg>
+    </div>
+    <div class="logo-text">Plumbers Market <span>Est. 1980 · Roodepoort</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#supplies">Supplies</a></li>
+    <li><a href="#booking">Book Online</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:+27117680389" class="nav-phone">011 768 0389</a>
+    <a href="#booking" class="btn-book">📅 Book a Plumber</a>
+  </div>
+  <button class="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Serving Johannesburg since 1980</div>
+    <h1>Your Local Plumbing <em>Experts</em> — Available 24 / 7</h1>
+    <p class="hero-desc">From burst geysers to blocked drains, we deliver fast, professional plumbing solutions across Roodepoort, the West Rand, and greater Johannesburg. No job too big. No surprise fees.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">📅 Book an Appointment</button>
+      <a href="tel:+27117680389" class="btn-ghost">📞 011 768 0389</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">44+</div><div class="stat-lbl">Years in business</div></div>
+      <div><div class="stat-num">4.4★</div><div class="stat-lbl">Google rating (233 reviews)</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-lbl">Emergency cover</div></div>
+    </div>
+  </div>
+
+  <div class="hero-card-wrap">
+    <div class="hero-card">
+      <h3>Get in touch now</h3>
+      <a href="tel:+27117680389" class="quick-contact-item">
+        <div class="qci-icon" style="background:rgba(232,80,10,0.15);">📞</div>
+        <div><div class="qci-label">Call us</div><div class="qci-value">011 768 0389</div></div>
+      </a>
+      <a href="https://wa.me/27117680389" class="quick-contact-item">
+        <div class="qci-icon" style="background:rgba(37,211,102,0.15);">💬</div>
+        <div><div class="qci-label">WhatsApp</div><div class="qci-value">Chat with us now</div></div>
+      </a>
+      <a href="https://maps.google.com/?q=75+Main+Reef+Rd+Princess+Roodepoort" target="_blank" class="quick-contact-item">
+        <div class="qci-icon" style="background:rgba(26,79,214,0.15);">📍</div>
+        <div><div class="qci-label">Visit us</div><div class="qci-value">75 Main Reef Rd, Princess, Roodepoort</div></div>
+      </a>
+      <div class="availability-badge">
+        <div class="avail-dot"></div>
+        <div class="avail-text">Available now — we pick up 24/7</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">🏆</span> Established 1980</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span class="trust-icon">✅</span> PIRB Registered Plumbers</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span class="trust-icon">🔒</span> Fully Insured</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span class="trust-icon">📋</span> COC Certificates Issued</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span class="trust-icon">⭐</span> 4.4 Stars — 233 Google Reviews</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span class="trust-icon">🚨</span> No After-Hours Surcharge</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="sec-head center">
+    <div class="sec-label">What we do</div>
+    <div class="sec-title">Complete Plumbing Services</div>
+    <div class="sec-sub">Residential, commercial &amp; industrial plumbing across Roodepoort &amp; the West Rand</div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="svc-icon">🚿</div>
+      <div class="svc-arrow">→</div>
+      <h3>Geyser Replacement &amp; Repair</h3>
+      <p>Same-day geyser installations and emergency repairs. Kwikot &amp; Heattech accredited. COC certificates issued.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🔍</div>
+      <div class="svc-arrow">→</div>
+      <h3>Leak Detection</h3>
+      <p>Advanced equipment to pinpoint hidden leaks before they cause serious damage to your property.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🚽</div>
+      <div class="svc-arrow">→</div>
+      <h3>Blocked Drain Clearing</h3>
+      <p>High-pressure jetting for blocked toilets, showers, basins &amp; sewer lines. Fast, clean &amp; effective.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🔧</div>
+      <div class="svc-arrow">→</div>
+      <h3>Pipe Repairs &amp; Replacements</h3>
+      <p>Burst, corroded or leaking pipes repaired or replaced. We work on copper, HDPE, PVC &amp; multi-layer pipes.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🏗️</div>
+      <div class="svc-arrow">→</div>
+      <h3>New Plumbing Installations</h3>
+      <p>Full plumbing fit-outs for new homes, factories, and commercial developments. From plans to completion.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">📹</div>
+      <div class="svc-arrow">→</div>
+      <h3>CCTV Drain Inspection</h3>
+      <p>Camera inspections for accurate blockage and damage diagnosis without costly exploratory digging.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🏢</div>
+      <div class="svc-arrow">→</div>
+      <h3>Commercial &amp; Industrial</h3>
+      <p>Office parks, estates, factories &amp; retail. Maintenance contracts available for peace of mind.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🔨</div>
+      <div class="svc-arrow">→</div>
+      <h3>Renovation &amp; Remedial Work</h3>
+      <p>Ceiling replacement, tiling, painting &amp; low-voltage electrical work — full renovation solutions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPLIES -->
+<section id="supplies" class="supplies-section">
+  <div class="sec-head">
+    <div class="sec-label">Plumbing store</div>
+    <div class="sec-title">Supplies &amp; Wholesale</div>
+    <div class="sec-sub">We stock a comprehensive range of plumbing supplies at competitive prices. Perfect for DIY homeowners, contractors &amp; tradespeople.</div>
+  </div>
+  <div class="supplies-grid">
+    <div class="supply-pill"><span>🪠</span> Pipes &amp; Fittings</div>
+    <div class="supply-pill"><span>🚿</span> Geysers &amp; Tanks</div>
+    <div class="supply-pill"><span>🔩</span> Valves &amp; Taps</div>
+    <div class="supply-pill"><span>🛁</span> Bathroom Fittings</div>
+    <div class="supply-pill"><span>💧</span> Water Meters</div>
+    <div class="supply-pill"><span>🪣</span> Drainage Systems</div>
+    <div class="supply-pill"><span>⚙️</span> Pumps &amp; Pressure</div>
+    <div class="supply-pill"><span>🔧</span> Tools &amp; Equipment</div>
+    <div class="supply-pill"><span>🪵</span> Building Materials</div>
+    <div class="supply-pill"><span>🎨</span> Paint &amp; Accessories</div>
+    <div class="supply-pill"><span>⚡</span> Electrical Supplies</div>
+    <div class="supply-pill"><span>📦</span> Wholesale Orders</div>
+  </div>
+  <p style="font-size:14px; color:var(--muted); margin-top:1rem;">💡 <strong>Can't find what you need?</strong> Our team will source it for you. Contractors &amp; tradespeople welcome — ask about trade pricing.</p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="process-section">
+  <div class="sec-head center">
+    <div class="sec-label">Simple process</div>
+    <div class="sec-title">How it works</div>
+    <div class="sec-sub">From booking to job done — fast, transparent &amp; hassle-free</div>
+  </div>
+  <div class="steps-wrap">
+    <div class="step">
+      <div class="step-circle">1</div>
+      <h4>Book online or call</h4>
+      <p>Fill in our booking form or call 011 768 0389. Available 24/7 for emergencies.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">2</div>
+      <h4>We confirm via WhatsApp</h4>
+      <p>Receive a WhatsApp confirmation within 15 minutes including your plumber's name.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">3</div>
+      <h4>Plumber arrives on time</h4>
+      <p>Uniformed, qualified professional arrives with all necessary parts &amp; equipment.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">4</div>
+      <h4>Job done &amp; certified</h4>
+      <p>You get a full invoice plus a COC certificate where applicable. Guaranteed workmanship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking-section">
+  <div class="booking-grid">
+    <div class="booking-info">
+      <div class="sec-label">Book an appointment</div>
+      <div class="sec-title" style="color:#fff;">Book a Plumber Online</div>
+      <div class="sec-sub">We'll confirm your appointment via WhatsApp within 15 minutes of submitting.</div>
+      <div class="info-block">
+        <div class="info-row">
+          <div class="info-icon">📞</div>
+          <div><div class="info-label">Phone</div><div class="info-val"><a href="tel:+27117680389" style="color:#fff; text-decoration:none;">011 768 0389</a></div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div><div class="info-label">Address</div><div class="info-val">75 Main Reef Rd, Princess, Roodepoort, 1730</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🕐</div>
+          <div><div class="info-label">Emergency line</div><div class="info-val">24 hours · 7 days a week</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div><div class="info-label">Service areas</div><div class="info-val">Roodepoort · West Rand · Johannesburg · Soweto · Krugersdorp</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-form">
+      <h3>Request an Appointment</h3>
+      <div class="form-row">
+        <div class="form-group"><label>Full name *</label><input type="text" id="b-name" placeholder="e.g. Sipho Dlamini" /></div>
+        <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" id="b-phone" placeholder="+27 82 000 0000" /></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email address</label><input type="email" id="b-email" placeholder="you@email.com" /></div>
+        <div class="form-group"><label>Your suburb / area *</label><input type="text" id="b-area" placeholder="e.g. Roodepoort, Krugersdorp" /></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Service required *</label>
+          <select id="b-service">
+            <option value="">Select a service...</option>
+            <option>Geyser repair / replacement</option>
+            <option>Leak detection</option>
+            <option>Blocked drain clearing</option>
+            <option>Burst / leaking pipe</option>
+            <option>New plumbing installation</option>
+            <option>CCTV drain inspection</option>
+            <option>Bathroom renovation</option>
+            <option>Commercial / industrial plumbing</option>
+            <option>Plumbing supplies / advice</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Preferred date</label><input type="date" id="b-date" /></div>
+      </div>
+      <div class="urgency-label">How urgent is this?</div>
+      <div class="urgency-row">
+        <button class="urgency-btn" onclick="setU(this,'sel-emergency')">🚨 Emergency — now</button>
+        <button class="urgency-btn" onclick="setU(this,'sel-today')">⚡ Today / tomorrow</button>
+        <button class="urgency-btn" onclick="setU(this,'sel-flex')">📅 This week — flexible</button>
+      </div>
+      <div class="form-row full">
+        <div class="form-group"><label>Describe the problem (optional)</label><textarea id="b-desc" placeholder="e.g. Geyser burst this morning, water leaking through the ceiling..."></textarea></div>
+      </div>
+      <button class="submit-btn" onclick="submitForm()">📅 Submit Booking Request</button>
+      <div class="form-note">We'll WhatsApp you within 15 minutes to confirm</div>
+      <div class="success-box" id="success-box">
+        <p>✅ Booking received! Thank you.</p>
+        <small>We'll WhatsApp you shortly to confirm your appointment details.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews-section">
+  <div class="sec-head">
+    <div class="sec-label">Customer reviews</div>
+    <div class="sec-title">What our clients say</div>
+  </div>
+  <div class="rating-hero">
+    <div>
+      <div class="big-rating">4.4</div>
+      <div class="rating-stars">★★★★½</div>
+      <div class="rating-count">Based on 233 Google reviews</div>
+    </div>
+    <div class="rating-bars">
+      <div class="bar-row"><div class="bar-label">5</div><div class="bar-track"><div class="bar-fill" style="width:68%"></div></div></div>
+      <div class="bar-row"><div class="bar-label">4</div><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div></div>
+      <div class="bar-row"><div class="bar-label">3</div><div class="bar-track"><div class="bar-fill" style="width:7%"></div></div></div>
+      <div class="bar-row"><div class="bar-label">2</div><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></div>
+      <div class="bar-row"><div class="bar-label">1</div><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-text">"Best plumbing store in RSA. Best prices. Friendly service. Whatever you need in plumbing, try Plumbers Market — they have everything you need and that is a reality."</div>
+      <div class="rc-author"><div class="rc-avatar">TM</div><div><div class="rc-name">Tebogo Molefe</div><div class="rc-area">Roodepoort</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-text">"Staff are excellent for the DIY person — guaranteed to find what you need for your leaking or broken water issue here. And they're still the cheapest around!"</div>
+      <div class="rc-author"><div class="rc-avatar">KN</div><div><div class="rc-name">Karen N.</div><div class="rc-area">Krugersdorp</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-text">"I've never left the store not having found what I was looking for. They give great advice and guidance, and if need be, referrals. Good competitive prices too."</div>
+      <div class="rc-author"><div class="rc-avatar">SV</div><div><div class="rc-name">Steve V.</div><div class="rc-area">Princess, Roodepoort</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="sec-head">
+    <div class="sec-label">Find us</div>
+    <div class="sec-title">Contact &amp; Location</div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Get in touch</h3>
+      <div class="contact-item">
+        <div class="ci-icon">📞</div>
+        <div><div class="ci-label">Phone</div><div class="ci-val"><a href="tel:+27117680389">011 768 0389</a></div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📱</div>
+        <div><div class="ci-label">Mobile / WhatsApp</div><div class="ci-val"><a href="tel:+27795619191">079 561 9191</a></div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <div><div class="ci-label">Address</div><div class="ci-val">75 Main Reef Rd, Princess<br>Roodepoort, Gauteng, 1730</div></div>
+      </div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.4!2d27.849!3d-26.151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA5JzAzLjYiUyAyN8KwNTAnNTYuNCJF!5e0!3m2!1sen!2sza!4v1"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h3>Store hours</h3>
+      <div class="hours-grid">
+        <div class="hours-row open"><span>Monday</span><span>07:30 – 17:00</span></div>
+        <div class="hours-row open"><span>Tuesday</span><span>07:30 – 17:00</span></div>
+        <div class="hours-row open"><span>Wednesday</span><span>07:30 – 17:00</span></div>
+        <div class="hours-row open"><span>Thursday</span><span>07:30 – 17:00</span></div>
+        <div class="hours-row open"><span>Friday</span><span>07:30 – 17:00</span></div>
+        <div class="hours-row open"><span>Saturday</span><span>08:00 – 13:00</span></div>
+        <div class="hours-row closed"><span>Sunday</span><span>Closed</span></div>
+        <div class="hours-row today" style="background:#fff3ed; color:var(--orange); grid-column:1/-1;"><span>🚨 Emergency Plumbing</span><span>24 / 7</span></div>
+      </div>
+      <div style="margin-top:1.5rem; padding:1.25rem; background:var(--cream); border-radius:12px; border:1px solid var(--border);">
+        <p style="font-size:13px; color:var(--muted); line-height:1.6;">📌 <strong>Easy to find:</strong> We're on Main Reef Road in Princess, right near Princess Crossing. Ample parking available. Contractors and tradespeople welcome — ask about our trade accounts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div>
+    <h2>Got a plumbing problem? We'll fix it — fast.</h2>
+    <p>Available around the clock. No after-hours surcharge. Trusted since 1980.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="tel:+27117680389" class="btn-white">📞 Call Now</a>
+    <a href="#booking" class="btn-outline-white">📅 Book Online</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Plumbers Market</div>
+    <div style="margin-top:4px; font-size:12px;">75 Main Reef Rd, Princess, Roodepoort, 1730 · 011 768 0389</div>
+    <div style="margin-top:2px; font-size:12px;">© 2025 Plumbers Market · All rights reserved</div>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#supplies">Supplies</a>
+    <a href="#booking">Book Online</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/27117680389" class="wa-fab" target="_blank" title="Chat on WhatsApp">
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<script>
+  let selectedUrgency = '';
+  function setU(btn, cls) {
+    document.querySelectorAll('.urgency-btn').forEach(b => b.className = 'urgency-btn');
+    btn.classList.add(cls);
+    selectedUrgency = cls;
+  }
+
+  function submitForm() {
+    const name = document.getElementById('b-name').value.trim();
+    const phone = document.getElementById('b-phone').value.trim();
+    const area = document.getElementById('b-area').value.trim();
+    const service = document.getElementById('b-service').value;
+    if (!name || !phone || !service || !area) {
+      alert('Please fill in your name, phone number, area, and service needed.');
+      return;
+    }
+    const btn = document.querySelector('.submit-btn');
+    btn.textContent = '✅ Booking Submitted!';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
+    document.getElementById('success-box').style.display = 'block';
+  }
+
+  function toggleMobileMenu() {
+    const links = document.querySelector('.nav-links');
+    const right = document.querySelector('.nav-right');
+    if (links.style.display === 'flex') {
+      links.style.display = '';
+      right.style.display = '';
+    } else {
+      links.style.display = 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '68px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = '#0a1628';
+      links.style.padding = '1rem 1.5rem';
+      links.style.gap = '1rem';
+      links.style.zIndex = '98';
+    }
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
